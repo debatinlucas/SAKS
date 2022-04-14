@@ -1,10 +1,10 @@
-package com.univali.aula7;
+package br.com.saks.biblioteca;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Aula7ApplicationTests {
+class BibliotecaApplicationTests {
 
 	@Test
 	void contextLoads() {

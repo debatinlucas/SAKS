@@ -1,0 +1,84 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SAKS",
+		"_postman_id": "4aa323f9-3bd2-5673-8f67-ce83464cf352",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Livros - Listar Todos",
+			"request": {
+				"url": "localhost:8080/livros",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Livros - Listar Pelo Id",
+			"request": {
+				"url": "localhost:8080/livros/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Livros - Adicionar",
+			"request": {
+				"url": "localhost:8080/livros",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\": \"Código da vinci\"\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Livros - Editar",
+			"request": {
+				"url": "localhost:8080/livros/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\": \"Teste\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Livros - Excluir",
+			"request": {
+				"url": "localhost:8080/livros/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
