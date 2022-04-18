@@ -1,82 +1,229 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "bb79ede0-a285-4c72-8667-680a803594a8",
 		"name": "SAKS",
-		"_postman_id": "4aa323f9-3bd2-5673-8f67-ce83464cf352",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Livros - Listar Todos",
 			"request": {
-				"url": "localhost:8080/livros",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"url": {
+					"raw": "localhost:8080/livros",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuários - Listar Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Livros - Listar Pelo Id",
 			"request": {
-				"url": "localhost:8080/livros/2",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"url": {
+					"raw": "localhost:8080/livros/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livros",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuários - Listar Pelo Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Livros - Adicionar",
 			"request": {
-				"url": "localhost:8080/livros",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\t\"titulo\": \"Código da vinci\"\t\n}"
 				},
-				"description": ""
+				"url": {
+					"raw": "localhost:8080/livros",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuários - Adicionar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Lucas\",\n\t\"email\": \"lucasdebatin@univali.br\",\n\t\"senha\": \"123456\"\t\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Livros - Editar",
 			"request": {
-				"url": "localhost:8080/livros/1",
 				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\t\"titulo\": \"Teste\"\n}"
 				},
-				"description": ""
+				"url": {
+					"raw": "localhost:8080/livros/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuários - Editar",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Lucas Debatin\",\n\t\"email\": \"lucasdebatin@univali.br\",\n\t\"senha\": \"123456\"\t\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/usuarios/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Livros - Excluir",
 			"request": {
-				"url": "localhost:8080/livros/1",
 				"method": "DELETE",
 				"header": [],
-				"body": {},
-				"description": ""
+				"url": {
+					"raw": "localhost:8080/livros/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuários - Excluir",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/usuarios/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
 			},
 			"response": []
 		}
