@@ -1,0 +1,25 @@
+spring:
+    application:
+        name: usuario-service
+    datasource:
+        url: jdbc:mysql://localhost:3306/biblioteca
+        username: root
+        password: master
+    jpa:
+        hibernate:
+            ddlAuto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        showSql: true
+
+server:
+  port: 8081
+  
+eureka:
+    client:
+        serviceUrl: 
+            defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    instance:
+        preferIpAddress: true
+      
