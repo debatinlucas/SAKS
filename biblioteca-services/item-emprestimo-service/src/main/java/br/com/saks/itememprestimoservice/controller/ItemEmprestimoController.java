@@ -28,9 +28,14 @@ public class ItemEmprestimoController {
     }
     
     @GetMapping(value = "/{idEmprestimo}/{idLivro}")
-    public Optional<ItemEmprestimo> findByEmprestimoLivro(@PathVariable Long idEmprestimo, @PathVariable Long idLivro) {
+    public Optional<ItemEmprestimo> listarPeloEmprestimoLivro(@PathVariable Long idEmprestimo, @PathVariable Long idLivro) {
         final ItemEmprestimoIdentity identity = new ItemEmprestimoIdentity(idEmprestimo, idLivro);
         return itemEmprestimoRepository.findById(identity);
+    }
+    
+    @GetMapping(value = "/{idEmprestimo}")
+    public Optional<ItemEmprestimo> listarPeloIdEmprestimo(@PathVariable Long idEmprestimo) {
+        return itemEmprestimoRepository.findByItemEmprestimoIdentityIdEmprestimo(idEmprestimo);
     }
     
     @PostMapping

@@ -12,5 +12,5 @@ import lombok.Data;
 @Entity
 public class ItemEmprestimo {
     @EmbeddedId
-    private ItemEmprestimoIdentity emprestimoIdentity;
+    private ItemEmprestimoIdentity itemEmprestimoIdentity;
 }
