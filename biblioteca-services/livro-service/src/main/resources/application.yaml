@@ -14,7 +14,7 @@ spring:
         showSql: true
 
 server:
-  port: 8080
+  port: 6060
   
 eureka:
     client:
