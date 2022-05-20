@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ItemEmprestimoRepository extends JpaRepository<ItemEmprestimo, ItemEmprestimoIdentity>{
     //O Spring JPA irá analisar automaticamente o nome do método e criar uma consulta a partir dele.
-    Optional<ItemEmprestimo> findByItemEmprestimoIdentityIdEmprestimo(Long id);
+    Optional<ItemEmprestimo> findByItemEmprestimoIdentityIdEmprestimo(Long idEmprestimo);
 }
