@@ -1,7 +1,7 @@
 package br.com.saks.biblioteca.controller;
 
-import br.com.saks.biblioteca.model.Livro;
-import br.com.saks.biblioteca.repository.LivroRepository;
+import br.com.saks.biblioteca.model.Emprestimo;
+import br.com.saks.biblioteca.repository.EmprestimoRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,43 +16,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/livros")
-public class LivroController {
+@RequestMapping("/emprestimos")
+public class EmprestimoController {
     
     @Autowired
-    private LivroRepository livroRepository;
+    private EmprestimoRepository emprestimoRepository;
     
     @GetMapping
-    public List<Livro> listarTodos() {
-        return livroRepository.findAll();
+    public List<Emprestimo> listarTodos() {
+        return emprestimoRepository.findAll();
     }
     
     @GetMapping(value="/{id}")
-    public Optional<Livro> listarPeloId(@PathVariable Long id) {
-        return livroRepository.findById(id);
+    public Optional<Emprestimo> listarPeloId(@PathVariable Long id) {
+        return emprestimoRepository.findById(id);
     }
     
     @PostMapping
-    public Livro adicionar(@RequestBody Livro livro) {
-        return livroRepository.save(livro);
+    public Emprestimo adicionar(@RequestBody Emprestimo emprestimo) {
+        return emprestimoRepository.save(emprestimo);
     }
     
     @PutMapping(value="/{id}")
-    public ResponseEntity editar(@PathVariable Long id, @RequestBody Livro livro) {
-        return livroRepository.findById(id)
+    public ResponseEntity editar(@PathVariable Long id, @RequestBody Emprestimo emprestimo) {
+        return emprestimoRepository.findById(id)
                 .map(record -> {
-                    record.setTitulo(livro.getTitulo());
-                    record.setResumo(livro.getResumo());
-                    Livro livroUpdated = livroRepository.save(record);
-                    return ResponseEntity.ok().body(livroUpdated);
+                    record.setStatus(emprestimo.getStatus());
+                    Emprestimo emprestimoUpdated = emprestimoRepository.save(record);
+                    return ResponseEntity.ok().body(emprestimoUpdated);
                 }).orElse(ResponseEntity.notFound().build());
     }
     
     @DeleteMapping(value="/{id}")
     public ResponseEntity deletar(@PathVariable Long id) {
-        return livroRepository.findById(id)
+        return emprestimoRepository.findById(id)
                 .map(record-> {
-                    livroRepository.deleteById(id);
+                    emprestimoRepository.deleteById(id);
                     return ResponseEntity.ok().build();
                 }).orElse(ResponseEntity.notFound().build());
     }
