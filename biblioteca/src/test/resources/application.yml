@@ -1,0 +1,13 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/biblioteca-teste
+        username: postgres
+        password: master
+        tomcat:
+            testOnBorrow: true
+            validationQuery: SELECT 1
+        sqlScriptEncoding: UTF-8
+    jpa:
+        hibernate:
+            ddlAuto: update
+        showSql: true
