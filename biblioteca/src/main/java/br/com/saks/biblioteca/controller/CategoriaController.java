@@ -6,6 +6,7 @@ import br.com.saks.biblioteca.repository.CategoriaRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,11 +24,13 @@ public class CategoriaController {
     @Autowired
     private CategoriaRepository categoriaRepository;
     
+    @Cacheable("listarTodos")
     @GetMapping
     public List<Categoria> listarTodos() {
         return categoriaRepository.findAll();
     }
     
+    @Cacheable("listarPeloId")
     @GetMapping(value="/{id}")
     public Optional<Categoria> listarPeloId(@PathVariable Long id) {
         return categoriaRepository.findById(id);

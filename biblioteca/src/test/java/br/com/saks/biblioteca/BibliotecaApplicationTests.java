@@ -1,6 +1,5 @@
 package br.com.saks.biblioteca;
 
-import br.com.saks.biblioteca.controller.CategoriaController;
 import br.com.saks.biblioteca.model.Categoria;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,6 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -50,11 +48,11 @@ class BibliotecaApplicationTests {
                 .andExpect(status().isOk());
         }
         
-	@Test
+	/*@Test
         void deleteCategoria() throws Exception {
             mockMvc.perform(MockMvcRequestBuilders.delete("/categorias/{id}", 3))
                 .andExpect(status().isOk());
-        }
+        }*/
         
 	@Test
         void getAllCategoria() throws Exception {
